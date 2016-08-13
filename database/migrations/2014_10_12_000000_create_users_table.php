@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
@@ -22,6 +23,12 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        factory(User::class)->create([
+            'username' => 'admin',
+            'email'    => 'admin@admin.com',
+            'password' => bcrypt('admin123'),
+        ]);
     }
 
     /**
