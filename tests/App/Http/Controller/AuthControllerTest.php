@@ -30,4 +30,41 @@ class AuthControllerTest extends \TestCase
             'username' => 'emtudo',
         ]);
     }
+
+    public function testLoginWithEmail()
+    {
+        //Sets
+        $data = [
+            'username' => 'teste@teste.com',
+            'password' => 'emtudo123',
+        ];
+
+        $user = [
+            'username' => 'emtudo',
+            'password' => bcrypt($data['password']),
+            'email'    => 'teste@teste.com',
+        ];
+
+        factory(User::class)->create($user);
+
+        $this->post('auth/login', $data);
+
+        //Asserts
+        $this->seeStatusCode(200);
+        $this->seeJson([
+            'username' => 'emtudo',
+        ]);
+    }
+
+    public function testCantLogin()
+    {
+        $data = [
+            'username' => uniqid(),
+            'password' => 'teste',
+        ];
+        $this->post('auth/login', $data);
+
+        //Asserts
+        $this->seeStatusCode(401);
+    }
 }
