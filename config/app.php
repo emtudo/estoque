@@ -158,6 +158,8 @@ return [
 
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
 
+        Illuminate\Notifications\NotificationServiceProvider::class,
+
     ],
 
     /*
