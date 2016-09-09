@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Domain\Auth;
 
-use App\Http\Requests\AuthRequest;
 use Auth;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 
-class AuthController extends Controller
+class Controller extends \Domain\Core\Http\Controller
 {
-    public function login(AuthRequest $request)
+    public function login(Request $request)
     {
         // grab credentials from the request
         $credentials = $request->only('username', 'password');

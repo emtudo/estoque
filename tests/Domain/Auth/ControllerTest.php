@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controller;
+namespace Domain\Auth;
 
-use App\User;
+use Domain\User\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class AuthControllerTest extends \TestCase
+class ControllerTest extends \TestCase
 {
     use DatabaseTransactions;
 

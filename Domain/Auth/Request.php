@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Domain\Auth;
 
-use App\Http\Requests\Request;
+use Domain\Core\Http\Request as BaseRequest;
 
-class AuthRequest extends Request
+class Request extends BaseRequest
 {
     /**
      * Determine if the user is authorized to make this request.
