@@ -1,9 +1,9 @@
 <?php
 /**
- * @author: Leandro Henrique <henrique@henriquereis.com>
+ * @author: Leandro Henrique
  * @date:   2016-09-10 18:20:57
  * @last modified by:   Leandro Henrique
- * @last modified time: 2016-09-10 18:59:06
+ * @last modified time: 2016-09-10 19:14:15
  */
 
 namespace Domain\Client;
