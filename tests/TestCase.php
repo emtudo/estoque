@@ -1,5 +1,6 @@
 <?php
 
+use Domain\User\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class TestCase extends Illuminate\Foundation\Testing\TestCase
@@ -25,5 +26,26 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
         $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
         return $app;
+    }
+
+    public function getHeaders(string $password = 'password123', User $user = null)
+    {
+        if (is_null($user)) {
+            $user = factory(User::class)->create([
+                'password' => bcrypt($password),
+            ]);
+        }
+        $data = [
+            'username' => $user->username,
+            'password' => $password,
+        ];
+        $this->post('auth/login', $data);
+
+        $data  = $this->response->getContent();
+        $token = json_decode($data)->token;
+
+        return [
+            'Authorization' => 'Bearer ' . $token,
+        ];
     }
 }
