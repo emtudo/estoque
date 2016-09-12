@@ -160,6 +160,8 @@ return [
 
         Illuminate\Notifications\NotificationServiceProvider::class,
 
+        ResultSystems\Validation\ValidationServiceProvider::class,
+
     ],
 
     /*
