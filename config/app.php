@@ -162,6 +162,8 @@ return [
 
         ResultSystems\Validation\ValidationServiceProvider::class,
 
+        ResultSystems\Cors\CorsServiceProvider::class,
+
     ],
 
     /*

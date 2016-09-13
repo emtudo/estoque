@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f936d7bb795b66b5fd367d5b1665cb38",
-    "content-hash": "30ef9ddd7cf347d34981e1c723fe444b",
+    "hash": "e73f0dd1823e77225a807811cdd5a00b",
+    "content-hash": "3806abaaafd10cab1ee7da2384e899a2",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1185,6 +1185,42 @@
                 "validator"
             ],
             "time": "2016-08-03 09:05:28"
+        },
+        {
+            "name": "resultsystems/laravel-cors",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/resultsystems/laravel-cors.git",
+                "reference": "801982335d626a5b8387ccd935d3f5e80f77b5d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/resultsystems/laravel-cors/zipball/801982335d626a5b8387ccd935d3f5e80f77b5d5",
+                "reference": "801982335d626a5b8387ccd935d3f5e80f77b5d5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ResultSystems\\Cors\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Leandro Henrique Reis",
+                    "email": "resultsystems@gmail.com"
+                }
+            ],
+            "description": "Laravel cors",
+            "time": "2016-02-16 23:36:02"
         },
         {
             "name": "resultsystems/validation",
