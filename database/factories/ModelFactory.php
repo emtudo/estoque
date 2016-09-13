@@ -10,7 +10,14 @@
 | database. Just tell the factory how a default model should look.
 |
  */
+use Domain\Client\Client;
 use Domain\User\User;
+
+$factory->define(Client::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+    ];
+});
 
 $factory->define(User::class, function (Faker\Generator $faker) {
     return [

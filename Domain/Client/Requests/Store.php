@@ -3,7 +3,7 @@
  * @author: Leandro Henrique
  * @date:   2016-09-11 23:02:12
  * @last modified by:   Leandro Henrique
- * @last modified time: 2016-09-11 23:11:17
+ * @last modified time: 2016-09-12 21:03:04
  */
 
 namespace Domain\Client\Requests;
@@ -14,7 +14,7 @@ class Store extends \Domain\Core\Http\Request
     {
         return [
             'name'      => 'required|max:45',
-            'cpf'       => 'cpf',
+            'cpf'       => 'cpf|unique:clients',
             'birthdate' => 'date|date_format:Y-m-d',
         ];
     }
