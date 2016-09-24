@@ -39,4 +39,14 @@ class Controller extends \Domain\Core\Http\Controller
 
         return compact('token', 'user');
     }
+
+    public function logout()
+    {
+        $result = JWTAuth::invalidate(JWTAuth::getToken());
+        if (!$result) {
+            return response()->json(['error' => 'falha ao deslogar'], 403);
+        }
+
+        return response()->json('ok');
+    }
 }
