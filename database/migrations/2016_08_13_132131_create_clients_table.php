@@ -17,6 +17,10 @@ class CreateClientsTable extends Migration
             $table->string('name', 45);
             $table->string('cpf', 11)->nullable();
             $table->date('birthdate')->nullable();
+            $table->rememberToken();
+            $table->string('username', 30)->unique()->nullable();
+            $table->string('email')->unique()->nullable();
+            $table->string('password')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -3,7 +3,7 @@
  * @author: Leandro Henrique
  * @date:   2016-09-10 18:25:53
  * @last modified by:   Leandro Henrique
- * @last modified time: 2016-09-12 21:12:25
+ * @last modified time: 2016-11-07 09:48:29
  */
 
 namespace Domain\Client;
@@ -13,6 +13,11 @@ use Domain\Client\Requests\Update;
 
 class Controller extends \Domain\Core\Http\Controller
 {
+    public function index()
+    {
+        return Client::all();
+    }
+
     public function store(Store $request)
     {
         $data   = $request->all();

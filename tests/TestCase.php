@@ -28,6 +28,11 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
         return $app;
     }
 
+    public function dd()
+    {
+        dd($this->response->getContent());
+    }
+
     public function getHeaders(string $password = 'password123', User $user = null)
     {
         if (is_null($user)) {
