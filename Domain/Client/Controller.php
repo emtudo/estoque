@@ -3,7 +3,7 @@
  * @author: Leandro Henrique
  * @date:   2016-09-10 18:25:53
  * @last modified by:   Leandro Henrique
- * @last modified time: 2016-12-24 08:50:19
+ * @last modified time: 2016-12-24 09:36:32
  */
 
 namespace Domain\Client;
@@ -40,5 +40,10 @@ class Controller extends \Domain\Core\Http\Controller
     public function destroy(int $clientId)
     {
         return Client::destroy($clientId);
+    }
+
+    public function show(int $clientId)
+    {
+        return Client::find($clientId);
     }
 }

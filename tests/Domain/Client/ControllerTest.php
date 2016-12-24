@@ -3,7 +3,7 @@
  * @author: Leandro Henrique
  * @date:   2016-09-10 18:20:57
  * @last modified by:   Leandro Henrique
- * @last modified time: 2016-12-24 08:46:28
+ * @last modified time: 2016-12-24 09:37:06
  */
 
 namespace Domain\Client;
@@ -113,5 +113,20 @@ class ControllerTest extends \TestCase
         $this->delete('client/' . $client->id, [], $headers);
 
         $this->seeStatusCode(200);
+    }
+
+    public function testShow()
+    {
+        $client = factory(Client::class)->create();
+
+        $headers = $this->getHeaders();
+
+        $this->get('client/' . $client->id, $headers);
+
+        $this->seeStatusCode(200);
+
+        $this->seeJson([
+            'id' => $client->id,
+        ]);
     }
 }
