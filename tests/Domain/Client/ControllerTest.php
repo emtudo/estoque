@@ -3,7 +3,7 @@
  * @author: Leandro Henrique
  * @date:   2016-09-10 18:20:57
  * @last modified by:   Leandro Henrique
- * @last modified time: 2016-09-12 21:12:47
+ * @last modified time: 2016-12-24 08:46:28
  */
 
 namespace Domain\Client;
@@ -102,5 +102,16 @@ class ControllerTest extends \TestCase
             'name' => $name,
             'cpf'  => $cpf,
         ]);
+    }
+
+    public function testDelete()
+    {
+        $client = factory(Client::class)->create();
+
+        $headers = $this->getHeaders();
+
+        $this->delete('client/' . $client->id, [], $headers);
+
+        $this->seeStatusCode(200);
     }
 }
