@@ -8,17 +8,15 @@
     "prefer-stable": true,
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.3.*",
+        "laravel/framework": "5.4.*",
         "tymon/jwt-auth": "~1.0",
-        "resultsystems/validation": "^3.0",
+        "resultsystems/validation": "^4.0",
         "resultsystems/laravel-cors": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~4.0",
-        "symfony/css-selector": "2.8.*|3.0.*",
-        "symfony/dom-crawler": "2.8.*|3.0.*"
+        "phpunit/phpunit": "~5.0"
     },
     "autoload": {
         "classmap": [
