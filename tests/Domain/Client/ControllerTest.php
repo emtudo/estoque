@@ -3,7 +3,7 @@
  * @author: Leandro Henrique
  * @date:   2016-09-10 18:20:57
  * @last modified by:   Leandro Henrique
- * @last modified time: 2016-12-24 09:37:06
+ * @last modified time: 2017-01-24 19:01:10
  */
 
 namespace Domain\Client;
@@ -84,7 +84,7 @@ class ControllerTest extends \TestCase
         $headers = $this->getHeaders();
 
         $name = 'Emtudo';
-        $cpf  = '96638237632';
+        $cpf  = '50403281091';
         $data = [
             'name'      => $name,
             'cpf'       => $cpf,

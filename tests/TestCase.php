@@ -3,7 +3,7 @@
 use Domain\User\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class TestCase extends Illuminate\Foundation\Testing\TestCase
+class TestCase extends Laravel\BrowserKitTesting\TestCase
 {
     use DatabaseTransactions;
 

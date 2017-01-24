@@ -11,7 +11,8 @@
         "laravel/framework": "5.4.*",
         "tymon/jwt-auth": "~1.0",
         "resultsystems/validation": "^4.0",
-        "resultsystems/laravel-cors": "^1.0"
+        "resultsystems/laravel-cors": "^1.0",
+        "laravel/browser-kit-testing": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

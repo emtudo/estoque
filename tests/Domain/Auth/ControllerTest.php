@@ -36,13 +36,13 @@ class ControllerTest extends \TestCase
     {
         //Sets
         $data = [
-            'username' => 'emtudo',
+            'username' => 'emtudo2',
             'password' => 'emtudo123',
         ];
 
         $user             = $data;
         $user['password'] = bcrypt($user['password']);
-        $user['email']    = 'teste@teste.com';
+        $user['email']    = 'teste2@teste.com';
         factory(Client::class)->create($user);
 
         $this->post('clients/auth/login', $data);
@@ -50,7 +50,7 @@ class ControllerTest extends \TestCase
         //Asserts
         $this->seeStatusCode(200);
         $this->seeJson([
-            'username' => 'emtudo',
+            'username' => 'emtudo2',
         ]);
     }
 
@@ -58,13 +58,13 @@ class ControllerTest extends \TestCase
     {
         //Sets
         $data = [
-            'username' => 'emtudo',
+            'username' => 'emtudo3',
             'password' => 'emtudo123',
         ];
 
         $user             = $data;
         $user['password'] = bcrypt($user['password']);
-        $user['email']    = 'teste@teste.com';
+        $user['email']    = 'teste3@teste.com';
         factory(User::class)->create($user);
 
         $this->post('auth/login', $data);
@@ -72,7 +72,7 @@ class ControllerTest extends \TestCase
         //Asserts
         $this->seeStatusCode(200);
         $this->seeJson([
-            'username' => 'emtudo',
+            'username' => 'emtudo3',
         ]);
     }
 
@@ -80,14 +80,14 @@ class ControllerTest extends \TestCase
     {
         //Sets
         $data = [
-            'username' => 'teste@teste.com',
+            'username' => 'teste4@teste.com',
             'password' => 'emtudo123',
         ];
 
         $user = [
-            'username' => 'emtudo',
+            'username' => 'emtudo4',
             'password' => bcrypt($data['password']),
-            'email'    => 'teste@teste.com',
+            'email'    => 'teste4@teste.com',
         ];
 
         factory(User::class)->create($user);
@@ -97,7 +97,7 @@ class ControllerTest extends \TestCase
         //Asserts
         $this->seeStatusCode(200);
         $this->seeJson([
-            'username' => 'emtudo',
+            'username' => 'emtudo4',
         ]);
     }
 
