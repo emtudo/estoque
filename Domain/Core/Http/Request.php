@@ -4,6 +4,8 @@ namespace Domain\Core\Http;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+//    use Illuminate\Http\Exceptions\HttpResponseException;
+
 abstract class Request extends FormRequest
 {
     /**
@@ -20,4 +22,9 @@ abstract class Request extends FormRequest
     {
         return response()->json($errors, 422);
     }
+
+    // protected function failedValidation(Validator $validator)
+    // {
+    //     throw new HttpResponseException(response()->json(..., 422));
+    // }
 }

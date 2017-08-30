@@ -51,6 +51,7 @@ class TestCase extends Laravel\BrowserKitTesting\TestCase
 
         return [
             'Authorization' => 'Bearer ' . $token,
+            'Content-Type'  => 'application/json',
         ];
     }
 }

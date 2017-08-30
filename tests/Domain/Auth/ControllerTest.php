@@ -20,7 +20,7 @@ class ControllerTest extends \TestCase
         $user['email']    = 'teste@teste.com';
         factory(User::class)->create($user);
 
-        $this->post('auth/login', $data);
+        $this->postJson('auth/login', $data);
 
         //Asserts
         $this->seeStatusCode(200);
@@ -28,7 +28,7 @@ class ControllerTest extends \TestCase
             'username' => 'emtudo',
         ]);
 
-        $this->post('auth/logout', [], $this->getHeaders());
+        $this->postJson('auth/logout', [], $this->getHeaders());
         $this->seeStatusCode(200);
     }
 
@@ -45,7 +45,7 @@ class ControllerTest extends \TestCase
         $user['email']    = 'teste2@teste.com';
         factory(Client::class)->create($user);
 
-        $this->post('clients/auth/login', $data);
+        $this->postJson('clients/auth/login', $data);
 
         //Asserts
         $this->seeStatusCode(200);
@@ -67,7 +67,7 @@ class ControllerTest extends \TestCase
         $user['email']    = 'teste3@teste.com';
         factory(User::class)->create($user);
 
-        $this->post('auth/login', $data);
+        $this->postJson('auth/login', $data);
 
         //Asserts
         $this->seeStatusCode(200);
@@ -92,7 +92,7 @@ class ControllerTest extends \TestCase
 
         factory(User::class)->create($user);
 
-        $this->post('auth/login', $data);
+        $this->postJson('auth/login', $data);
 
         //Asserts
         $this->seeStatusCode(200);
@@ -107,7 +107,7 @@ class ControllerTest extends \TestCase
             'username' => uniqid(),
             'password' => 'teste',
         ];
-        $this->post('auth/login', $data);
+        $this->postJson('auth/login', $data);
 
         //Asserts
         $this->seeStatusCode(401);

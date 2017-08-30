@@ -19,7 +19,7 @@ class ControllerTest extends \TestCase
         $data = [
             'name' => $name,
         ];
-        $this->post('client', $data, $headers);
+        $this->postJson('client', $data, $headers);
         $this->seeStatusCode(200);
         $this->seeJson([
             'name' => $name,
@@ -41,7 +41,7 @@ class ControllerTest extends \TestCase
             'cpf'       => $cpf,
             'birthdate' => '2016-09-11',
         ];
-        $this->post('client', $data, $headers);
+        $this->postJson('client', $data, $headers);
         $this->seeStatusCode(200);
         $this->seeJson([
             'name' => $name,
@@ -69,7 +69,7 @@ class ControllerTest extends \TestCase
         ];
 
         //expects
-        $this->post('client', $data, $headers);
+        $this->postJson('client', $data, $headers);
 
         //Asserts
         $this->seeStatusCode(422);
@@ -90,7 +90,7 @@ class ControllerTest extends \TestCase
             'cpf'       => $cpf,
             'birthdate' => '2016-09-11',
         ];
-        $this->put('client/' . $client->id, $data, $headers);
+        $this->putJson('client/' . $client->id, $data, $headers);
 
         //Asserts
         $this->seeStatusCode(200);
